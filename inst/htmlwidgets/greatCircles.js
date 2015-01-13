@@ -10,7 +10,7 @@ HTMLWidgets.widget({
     height = width/2;
 
 //select(el).
-    d3.select(".greatCircles").append("svg")
+    d3.select(el).append("svg")
             .attr("width", width)
             .attr("height", height);
 
@@ -37,7 +37,7 @@ HTMLWidgets.widget({
 
     // select the svg element and remove existing childern
     //.select(el)
-    var svg = d3.select(".greatCircles").select("svg");
+    var svg = d3.select(el).select("svg");
     svg.selectAll("*").remove();
 
     // this is where we draw the trip-related arcs
@@ -69,7 +69,7 @@ HTMLWidgets.widget({
     var width = window.innerWidth * 0.9, //960,
         height = width/2;
 
-    d3.select(".greatCircles").select("svg")
+    d3.select(el).select("svg")
       .attr("width", width)
       .attr("height", height)
 
