@@ -12,9 +12,13 @@ This will/should display a world map with four arcs all terminating in Australia
 
 ![world-plot](inst/examples/figures/sample.png)
 
-**What does not work:**
+Running inside of Shiny works now (but I'm not so sure about the resize logic)
 ```
 inst/examples/shiny-example.R
 ```
 
-I suspect that this fails to render based on my D3 inexperience, specifically the way the greatCircles.js code is selecting the DOM elements for use in a Shiny container.
+**TODOs:**
+
+* Gradiate the arcs from start to finish
+* Add support of annotations
+
