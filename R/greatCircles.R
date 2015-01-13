@@ -37,13 +37,13 @@ rendergreatCircles <- function(expr, env = parent.frame(), quoted = FALSE) {
   shinyRenderWidget(expr, greatCirclesOutput, env, quoted = TRUE)
 }
 
-#' Utility function to convert from the data.frame 
+#' Utility function to convert from the data.frame
 #' to a list for javascript serialization
-#' 
+#'
 toCoordsLocal <- function(i,data) {
   list(type="LineString",
        coordinates=list(
-         c(data[i,"longitude.start"], data[i,"latitude.start"]), 
+         c(data[i,"longitude.start"], data[i,"latitude.start"]),
          c(data[i,"longitude.finish"], data[i,"latitude.finish"])
        )
   )
