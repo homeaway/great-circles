@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.land {
+  fill: #333333;
+}
+
+.trip {
+  fill: none;
+  stroke: #FED863;
+  stroke-width: .3px;
+  stroke-linecap: round;
+}
+
+.boundary {
+  fill: none;
+  stroke: #111111;
+  stroke-width: .5px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+</style>
+
+<body style="background-color:#000000">
+<!-- http://bl.ocks.org/mbostock/5851933 -->
+<script src="htmlwidgets/lib/d3/d3.min.js"></script>
+<script src="htmlwidgets/lib/d3-geo-projection/d3.geo.projection.min.js"></script>
+<script src="htmlwidgets/lib/topojson/topojson.js"></script>
+
+<script>
+var width = window.innerWidth, //960,
+    height = width/2;
+
+var projection = d3.geo.equirectangular()
+    .scale(100*width/640)
+    .translate([width / 2, height / 2])
+    .precision(.1);
+
+var path = d3.geo.path()
+    .projection(projection);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+d3.json("htmlwidgets/lib/shapes/world-110m.json", function(error, world) {
+  svg.insert("path")
+      .datum(topojson.feature(world, world.objects.land))
+      .attr("class", "land")
+      .attr("d", path);
+
+  svg.insert("path", ".trip")
+      .datum(topojson.mesh(world, world.objects.countries, function(a, b) { return a !== b; }))
+      .attr("class", "boundary")
+      .attr("d", path);
+});
+
+d3.select(self.frameElement).style("height", height + "px");
+
+</script>
+
