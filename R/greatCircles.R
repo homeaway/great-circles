@@ -2,6 +2,12 @@
 #'
 #' Draws Great Circle arcs in an svg container using D3 Projections
 #'
+#' @param coordinates data.frame containing the start and finish coordinates of each arc. Must contain four columns
+#' called "longitude.start", "latitude.start", "longitude.finish", and "latitude.finish"
+#'
+#' @param width width of the visualization. NOTE: this is ignored
+#' @param height height of the visualization. NOTE: this is ignored
+#'
 #' @import htmlwidgets
 #'
 #' @export
