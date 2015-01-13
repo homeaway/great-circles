@@ -34,14 +34,16 @@ greatCircles <- function(coordinates, width = NULL, height = NULL) {
     x,
     width = width,
     height = height,
-    package = 'greatCircles'
+    package = 'greatCircles',
+    sizingPolicy = htmlwidgets::sizingPolicy(
+      browser.fill = TRUE)
   )
 }
 
 #' Widget output function for use in Shiny
 #'
 #' @export
-greatCirclesOutput <- function(outputId, width = '100%', height = '400px'){
+greatCirclesOutput <- function(outputId, width = '100%', height = '100%'){
   shinyWidgetOutput(outputId, "greatCircles", width, height, package = "greatCircles")
 }
 
