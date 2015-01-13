@@ -66,6 +66,13 @@ HTMLWidgets.widget({
 },
   resize: function(el, width, height, instance) {
 
+    var width = window.innerWidth * 0.9, //960,
+        height = width/2;
+
+    d3.select(".greatCircles").select("svg")
+      .attr("width", width)
+      .attr("height", height)
+
   }
 
 });
