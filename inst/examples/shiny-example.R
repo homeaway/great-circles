@@ -1,5 +1,5 @@
 library(shiny)
-library(greatCircle)
+library(greatCircles)
 library(htmlwidgets)
 
 coords = data.frame(longitude.start=c(138.6,145.0181,138.6,153.1693),
@@ -17,3 +17,4 @@ server = function(input, output) {
 }
 
 shinyApp(ui = ui, server = server)
+
