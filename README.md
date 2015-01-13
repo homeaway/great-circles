@@ -15,6 +15,9 @@ greatCircles(data.frame(longitude.start=c(138.6,145.0181,138.6,153.1693),
                         )
 )
 ```
+**What does not work:**
+
+Resizing. If anyone could help, that would be swell
 
 **What works:**
 ```
@@ -25,7 +28,7 @@ This will/should display a world map with four arcs all terminating in Australia
 
 ![world-plot](inst/examples/figures/sample.png)
 
-Running inside of Shiny works now (but I'm not so sure about the resize logic)
+Running inside of Shiny works now 
 ```
 inst/examples/shiny-example.R
 ```
