@@ -1,0 +1,21 @@
+dependencies:
+- name: d3
+  version: 3.5.3
+  src: htmlwidgets/lib/d3
+  script: d3.min.js
+- name: d3-geo-projection
+  version: 0.2.12
+  src: htmlwidgets/lib/d3-geo-projection
+  script: d3.geo.projection.min.js
+- name: topojson
+  version: 1.6.18
+  src: htmlwidgets/lib/topojson
+  script: topojson.js
+- name: 'shapes'
+  version: 0.1.0
+  src: 'htmlwidgets/lib/shapes'
+  attachment: {"world": 'world-110m.json'}
+- name: 'css'
+  version: 0.1.0
+  src: 'htmlwidgets/lib/css'
+  stylesheet: 'greatCircles.css'
