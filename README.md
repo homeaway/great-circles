@@ -8,7 +8,7 @@ inst/examples/standalone-example.R
 
 This will/should display a world map with four arcs all coming our of Australia (two of them are almost coincident). Looks like this:
 
-!(inst/examples/figures/sample.png)
+![world-plot](inst/examples/figures/sample.png)
 
 **What does not work:**
 ints/examples/shiny-example.R
