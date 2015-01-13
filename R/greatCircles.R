@@ -7,9 +7,19 @@
 #' @export
 greatCircles <- function(coordinates, width = NULL, height = NULL) {
 
+  #Utility function to convert dataframe to list (for javascript)
+  toCoords <- function(i,data) {
+    list(type="LineString",
+         coordinates=list(
+           c(data[i,"longitude.start"], data[i,"latitude.start"]),
+           c(data[i,"longitude.finish"], data[i,"latitude.finish"])
+         )
+    )
+  }
+
   # forward options using x
   x = list(
-    coords = lapply(1:nrow(coordinates), toCoordsLocal, coordinates)
+    coords = lapply(1:nrow(coordinates), toCoords, coordinates)
   )
 
   # create widget
@@ -35,17 +45,5 @@ greatCirclesOutput <- function(outputId, width = '100%', height = '400px'){
 rendergreatCircles <- function(expr, env = parent.frame(), quoted = FALSE) {
   if (!quoted) { expr <- substitute(expr) } # force quoted
   shinyRenderWidget(expr, greatCirclesOutput, env, quoted = TRUE)
-}
-
-#' Utility function to convert from the data.frame
-#' to a list for javascript serialization
-#'
-toCoordsLocal <- function(i,data) {
-  list(type="LineString",
-       coordinates=list(
-         c(data[i,"longitude.start"], data[i,"latitude.start"]),
-         c(data[i,"longitude.finish"], data[i,"latitude.finish"])
-       )
-  )
 }
 
