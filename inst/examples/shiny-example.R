@@ -12,14 +12,18 @@ server = function(input, output) {
                latitude.finish = c(40.76352, 40.78027, 48.88156, 40.75708)
     )
   ))
-  output$foo = renderText({"Hello World"})
+  output$hithere = renderText({"Hello World"})
 }
 
 ui = shinyUI(fluidPage(
-
-      greatCirclesOutput("arcs")
-
-
+  fluidRow(
+    column(2,
+           textOutput("hithere")
+           ),
+    column(10,
+           greatCirclesOutput("arcs")
+           )
+    )
 ))
 
 shinyApp(ui = ui, server = server)
