@@ -15,9 +15,8 @@ greatCircles(data.frame(longitude.start=c(138.6,145.0181,138.6,153.1693),
                         )
 )
 ```
-**What does not work:**
-
-Resizing. If anyone could help, that would be swell
+**What Does Not Work:**
+Check the issues list
 
 **What works:**
 ```
