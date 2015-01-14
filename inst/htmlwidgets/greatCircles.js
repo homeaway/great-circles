@@ -6,18 +6,17 @@ HTMLWidgets.widget({
 
   initialize: function(el, width, height) {
 
-    var width = window.innerWidth * 0.9, //960,
-    height = width/2;
+    // for the equirectangular projection, the height is 1/2 the width
+    var height = width/2;
 
-//select(el).
     d3.select(el).append("svg")
             .attr("width", width)
             .attr("height", height);
 
 
     return {
-      // TODO: add instance fields as required
-
+    //TODO: Not sure if this is the best place to define projection. Eventually, being able to change
+    //the projection on the fly would be nice
       projection : d3.geo.equirectangular()
                     .scale(100*width/640)
                     .translate([width / 2, height / 2])
@@ -66,13 +65,25 @@ HTMLWidgets.widget({
 },
   resize: function(el, width, height, instance) {
 
-    var width = window.innerWidth * 0.9, //960,
-        height = width/2;
+    // for the equirectangular projection, the height is 1/2 the width
+    var height = width/2;
 
-    d3.select(el).select("svg")
-      .attr("width", width)
-      .attr("height", height)
+    var svg = d3.select(el).select("svg");
+
+      svg.attr("width", width)
+      .attr("height", height);
+
+    instance.projection
+      .translate([width / 2, height / 2])
+      .scale(100*width/640);
+
+    var path = d3.geo.path()
+      .projection(instance.projection);
+
+      // resize the map
+    svg.selectAll('.arc').attr('d', path);
+    svg.selectAll('.land').attr('d', path);
+    svg.selectAll('.boundary').attr('d', path);
 
   }
-
 });
