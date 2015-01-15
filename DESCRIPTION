@@ -4,5 +4,5 @@ Version: 0.1
 Authors@R: "Brent Schneeman <brent@homeaway.com> [aut, cre]"
 Description: Draws Great Circle Arcs in an SVG container
 Depends: R (>= 3.1.0)
-License: What license is it under?
+License:  http://www.apache.org/licenses/LICENSE-2.0
 LazyData: true
