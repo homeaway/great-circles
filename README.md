@@ -1,7 +1,7 @@
 # great-circles
 An attempt to create great circles arcs via [d3](http://d3js.org/), [Shiny](http://shiny.rstudio.com/), [htmlwidgets](http://www.htmlwidgets.org/) and [R](http://www.r-project.org/). 
 
-clone the repo, and type devtools::install() to get your nice great circle widget. Or you can devtools::install_github("schnee/great-circles") and get it directly.
+Pull the repo, and type devtools::install() to get your nice great circle widget. Or you can devtools::install_github("schnee/great-circles") and get it directly.
 
 To use, create a data.frame with four columns and call the greatCircles function.
 
@@ -15,8 +15,6 @@ greatCircles(data.frame(longitude.start=c(138.6,145.0181,138.6,153.1693),
                         )
 )
 ```
-**What Does Not Work:**
-Check the issues list
 
 **What works:**
 ```
@@ -32,10 +30,39 @@ Running inside of Shiny works now
 inst/examples/shiny-example.R
 ```
 
-**TODOs:**
+Arc styling is controlled via CSS:
 
-* Gradiate the arcs from start to finish
-* Add support of annotations
+```
+/* styles the land elements (countries) */
+.land {
+  fill: #333333;
+}
+
+/* border between countries */
+.boundary {
+  fill: none;
+  stroke: #111111;
+  stroke-width: .5px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+/* arc styling */
+.arc {
+  fill: none;
+  stroke: #FED863;  /*homeaway yellow*/
+  stroke-width: 1.5px;
+  stroke-linecap: round;
+  stroke-opacity: 0.3;
+}
+
+/* arc:hover styling */
+.arc:hover {
+  stroke: #2A6EBB; /*homeaway blue*/
+  stroke-width: 5px;
+  stroke-opacity: 1.0;
+}
+```
 
 ------
 Copyright (c) 2015 HomeAway.com
