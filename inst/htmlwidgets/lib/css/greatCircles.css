@@ -1,7 +1,18 @@
+/* styles the land elements (countries) */
 .land {
   fill: #333333;
 }
 
+/* border between countries */
+.boundary {
+  fill: none;
+  stroke: #111111;
+  stroke-width: .5px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+/* arc styling */
 .arc {
   fill: none;
   stroke: #FED863;  /*homeaway yellow*/
@@ -10,17 +21,10 @@
   stroke-opacity: 0.3;
 }
 
+/* arc:hover styling */
 .arc:hover {
   stroke: #2A6EBB; /*homeaway blue*/
   stroke-width: 5px;
   stroke-opacity: 1.0;
-}
-
-.boundary {
-  fill: none;
-  stroke: #111111;
-  stroke-width: .5px;
-  stroke-linejoin: round;
-  stroke-linecap: round;
 }
 

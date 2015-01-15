@@ -1,5 +1,5 @@
 # great-circles
-An attempt to create great circles arcs via d3, Shiny, htmlwidgets and R
+An attempt to create great circles arcs via [d3](http://d3js.org/), [Shiny](http://shiny.rstudio.com/), [htmlwidgets](http://www.htmlwidgets.org/) and [R](http://www.r-project.org/). 
 
 clone the repo, and type devtools::install() to get your nice great circle widget. Or you can devtools::install_github("schnee/great-circles") and get it directly.
 
@@ -37,3 +37,5 @@ inst/examples/shiny-example.R
 * Gradiate the arcs from start to finish
 * Add support of annotations
 
+------
+Copyright (c) 2015 HomeAway.com
