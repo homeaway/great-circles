@@ -29,7 +29,7 @@ This will/should display a tour all over the world. Looks like this:
 
 ![world-plot](inst/examples/figures/sample.png)
 
-Running inside of Shiny works now 
+Running inside of Shiny works as well. 
 ```
 inst/examples/shiny-example.R
 ```
