@@ -16,9 +16,9 @@
 .arc {
   fill: none;
   stroke: #FED863;  /*homeaway yellow*/
-  stroke-width: 1.5px;
+  stroke-width: 5px;
   stroke-linecap: round;
-  stroke-opacity: 0.3;
+  stroke-opacity: .5;
 }
 
 /* arc:hover styling */
